@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="starrf.MainFormController">
+   <right>
+      <AnchorPane fx:id="paneControl" prefHeight="200.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+         <children>
+            <TitledPane fx:id="title1" animated="false" collapsible="false" layoutY="14.0" prefHeight="157.0" prefWidth="280.0" text="Line One" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="14.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="125.0" prefWidth="278.0">
+                     <children>
+                        <Slider fx:id="sliderX1" blockIncrement="0.1" layoutX="69.0" layoutY="15.0" max="10.0" min="-10.0" />
+                        <Label fx:id="labelX1" layoutX="229.0" layoutY="13.0" />
+                        <Label layoutX="39.0" layoutY="13.0" text="x1" />
+                        <Slider fx:id="sliderY1" blockIncrement="0.1" layoutX="69.0" layoutY="43.0" max="10.0" min="-10.0" />
+                        <Label layoutX="39.0" layoutY="41.0" text="y1" />
+                        <Label fx:id="labelY1" layoutX="215.0" layoutY="41.0" />
+                        <Slider fx:id="sliderX2" blockIncrement="0.1" layoutX="69.0" layoutY="75.0" max="10.0" min="-10.0" />
+                        <Label layoutX="39.0" layoutY="74.0" text="x2" />
+                        <Label fx:id="labelX2" layoutX="215.0" layoutY="74.0" />
+                        <Label layoutX="39.0" layoutY="106.0" text="y2" />
+                        <Slider fx:id="sliderY2" blockIncrement="0.1" layoutX="69.0" layoutY="107.0" max="10.0" min="-10.0" />
+                        <Label fx:id="labelY2" layoutX="215.0" layoutY="106.0" />
+                     </children></AnchorPane>
+              </content>
+            </TitledPane>
+            <TitledPane fx:id="title2" animated="false" collapsible="false" layoutY="169.0" prefHeight="163.0" prefWidth="280.0" text="Line Two" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="169.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Slider fx:id="slider2X1" blockIncrement="0.1" layoutX="69.0" layoutY="21.0" max="10.0" min="-10.0" />
+                        <Slider fx:id="slider2Y1" blockIncrement="0.1" layoutX="69.0" layoutY="48.0" max="10.0" min="-10.0" />
+                        <Slider fx:id="slider2X2" blockIncrement="0.1" layoutX="69.0" layoutY="76.0" max="10.0" min="-10.0" />
+                        <Slider fx:id="slider2Y2" blockIncrement="0.1" layoutX="69.0" layoutY="107.0" max="10.0" min="-10.0" />
+                        <Label layoutX="42.0" layoutY="20.0" text="x1" />
+                        <Label layoutX="41.0" layoutY="47.0" text="y1" />
+                        <Label layoutX="42.0" layoutY="75.0" text="x2" />
+                        <Label layoutX="42.0" layoutY="106.0" text="y2" />
+                        <Label fx:id="label2X1" layoutX="221.0" layoutY="20.0" />
+                        <Label fx:id="label2Y1" layoutX="221.0" layoutY="47.0" />
+                        <Label fx:id="label2X2" layoutX="221.0" layoutY="74.0" />
+                        <Label fx:id="label2Y2" layoutX="221.0" layoutY="106.0" />
+                     </children></AnchorPane>
+              </content>
+            </TitledPane>
+            <TitledPane animated="false" collapsible="false" layoutX="10.0" layoutY="410.0" prefHeight="80.0" prefWidth="280.0" text="Intersect Point" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="410.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="labelBlack" alignment="CENTER" layoutX="3.0" layoutY="19.0" prefHeight="17.0" prefWidth="273.0" text="tempo" />
+                     </children></AnchorPane>
+              </content>
+            </TitledPane>
+            <Button layoutX="114.0" layoutY="354.0" mnemonicParsing="false" onAction="#resetAll" text="Reset" />
+         </children></AnchorPane>
+   </right>
+   <center>
+      <Pane fx:id="paneView" onMouseDragged="#handleMouseDragged" onMouseExited="#handleMouseExited" onMouseMoved="#handleMouseMoved" onMousePressed="#handleMousePressed" onMouseReleased="#handleMouseReleased" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+            <children>
+            <Label fx:id="labelCoord" layoutX="5.0" layoutY="5.0" text="(x, y)" />
+            <Line fx:id="line1a" stroke="DODGERBLUE" />
+            <Line fx:id="line1b" stroke="DODGERBLUE" />
+            <Line fx:id="line1c" stroke="DODGERBLUE" />
+            <Line fx:id="line2a" stroke="#ff501e" />
+            <Line fx:id="line2b" stroke="#ff501e" />
+            <Line fx:id="line2c" stroke="#ff501e" />
+            <Circle fx:id="point1a" centerX="250.0" centerY="250.0" fill="DODGERBLUE" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Circle fx:id="point1b" centerX="250.0" centerY="250.0" fill="DODGERBLUE" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Circle fx:id="point2a" centerX="250.0" centerY="250.0" fill="#ff501e" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Circle fx:id="point2b" centerX="250.0" centerY="250.0" fill="#ff501e" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Circle fx:id="pointIntersect" centerX="250.0" centerY="250.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
